@@ -58,6 +58,14 @@ float  cblas_scasum(const int N, const void *X, const int incX);
 
 double cblas_dznrm2(const int N, const void *X, const int incX);
 double cblas_dzasum(const int N, const void *X, const int incX);
+
+/*
+ * Functions having standard 4 prefixes (S D C Z)
+ */
+CBLAS_INDEX cblas_isamax(const int N, const float  *X, const int incX);
+CBLAS_INDEX cblas_idamax(const int N, const double *X, const int incX);
+CBLAS_INDEX cblas_icamax(const int N, const void   *X, const int incX);
+CBLAS_INDEX cblas_izamax(const int N, const void   *X, const int incX);
 #ifdef __cplusplus
 }
 #endif

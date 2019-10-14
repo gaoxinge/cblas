@@ -1,4 +1,5 @@
 #include <math.h>
+#include "cblas.h"
 
 /* 2-norm */
 float cblas_snrm2(const int N, 

@@ -51,9 +51,20 @@ void test_num() {
     printf("cblas_dzasum: %f\n", cblas_dzasum(2, X2, 1));
 }
 
+void test_max() {
+    float X1[] = {1, 3, 2, 3};
+    double X2[] = {1, 3, 2, 3};
+    
+    printf("cblas_isamax: %I64d\n", cblas_isamax(4, X1, 1));
+    printf("cblas_idamax: %I64d\n", cblas_idamax(4, X2, 1));
+    printf("cblas_icamax: %I64d\n", cblas_icamax(2, X1, 1));
+    printf("cblas_izamax: %I64d\n", cblas_izamax(2, X2, 1));
+}
+
 int main() {
     test_dot();
     test_dot_sub();
     test_num();
+    test_max();
     return 0;
 }
