@@ -19,8 +19,26 @@ void test_dot() {
     printf("cblas_ddot: %lf\n", result2);
 }
 
+void test_dot_sub() {
+    float X1[] = {1, 1, 1, 1};
+    float Y1[] = {2, 2, 2, 2};
+    float result1[] = {0, 0};
+    double X2[] = {1, 1, 1, 1};
+    double Y2[] = {2, 2, 2, 2};
+    double result2[] = {0, 0};
+    
+    cblas_cdotu_sub(2, X1, 1, Y1, 1, result1);
+    printf("cblas_cdotu_sub: %f %f\n", result1[0], result1[1]);
+    cblas_cdotc_sub(2, X1, 1, Y1, 1, result1);
+    printf("cblas_cdotc_sub: %f %f\n", result1[0], result1[1]);
+    cblas_zdotu_sub(2, X2, 1, Y2, 1, result2);
+    printf("cblas_zdotu_sub: %lf %lf\n", result2[0], result2[1]);
+    cblas_zdotc_sub(2, X2, 1, Y2, 1, result2);
+    printf("cblas_zdotc_sub: %lf %lf\n", result2[0], result2[1]);
+}
 
 int main() {
     test_dot();
+    test_dot_sub();
     return 0;
 }

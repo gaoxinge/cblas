@@ -2,3 +2,4 @@ objs/
 cblas/
 main
 main.o
+main.exe
