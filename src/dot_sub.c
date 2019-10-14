@@ -1,3 +1,5 @@
+#include "cblas.h"
+
 /* X^t + Y */
 void cblas_cdotu_sub(const int N,
                      const void *X,
@@ -24,6 +26,7 @@ void cblas_cdotu_sub(const int N,
     _dotu[1] = im;
 }
 
+/* X^h + Y */
 void cblas_cdotc_sub(const int N,
                      const void *X,
                      const int incX,
@@ -49,6 +52,7 @@ void cblas_cdotc_sub(const int N,
     _dotc[1] = im;
 }
 
+/* X^t + Y */
 void cblas_zdotu_sub(const int N,
                      const void *X,
                      const int incX,
@@ -74,6 +78,7 @@ void cblas_zdotu_sub(const int N,
     _dotu[1] = im;
 }
 
+/* X^h + Y */
 void cblas_zdotc_sub(const int N,
                      const void *X,
                      const int incX,
