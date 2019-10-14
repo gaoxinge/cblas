@@ -37,8 +37,23 @@ void test_dot_sub() {
     printf("cblas_zdotc_sub: %lf %lf\n", result2[0], result2[1]);
 }
 
+void test_num() {
+    float X1[] = {1, 1, 1, 1};
+    double X2[] = {1, 1, 1, 1};
+    
+    printf("cblas_snrm2: %f\n", cblas_snrm2(4, X1, 1));
+    printf("cblas_sasum: %f\n", cblas_sasum(4, X1, 1));
+    printf("cblas_dnrm2: %f\n", cblas_dnrm2(4, X2, 1));
+    printf("cblas_dasum: %f\n", cblas_dasum(4, X2, 1));
+    printf("cblas_scnrm2: %f\n", cblas_scnrm2(2, X1, 1));
+    printf("cblas_scasum: %f\n", cblas_scasum(2, X1, 1));
+    printf("cblas_dznrm2: %f\n", cblas_dznrm2(2, X2, 1));
+    printf("cblas_dzasum: %f\n", cblas_dzasum(2, X2, 1));
+}
+
 int main() {
     test_dot();
     test_dot_sub();
+    test_num();
     return 0;
 }

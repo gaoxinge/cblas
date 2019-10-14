@@ -9,7 +9,7 @@ ALIB = cblas/libs/cblas.a
 SLIB = cblas/libs/cblas.so
 HEADER = cblas/include/cblas.h
 INCLUDE = -Icblas/include/
-OBJ = dot.o dot_sub.o
+OBJ = dot.o dot_sub.o nm.o
 OBJS = $(addprefix objs/, $(OBJ))
 VPATH = src
 

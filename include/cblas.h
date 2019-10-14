@@ -43,6 +43,21 @@ void   cblas_zdotu_sub(const int N, const void *X, const int incX,
                        const void *Y, const int incY, void *dotu);
 void   cblas_zdotc_sub(const int N, const void *X, const int incX,
                        const void *Y, const int incY, void *dotc);
+
+/*
+ * Functions having prefixes S D SC DZ
+ */
+float  cblas_snrm2(const int N, const float *X, const int incX);
+float  cblas_sasum(const int N, const float *X, const int incX);
+
+double cblas_dnrm2(const int N, const double *X, const int incX);
+double cblas_dasum(const int N, const double *X, const int incX);
+
+float  cblas_scnrm2(const int N, const void *X, const int incX);
+float  cblas_scasum(const int N, const void *X, const int incX);
+
+double cblas_dznrm2(const int N, const void *X, const int incX);
+double cblas_dzasum(const int N, const void *X, const int incX);
 #ifdef __cplusplus
 }
 #endif
