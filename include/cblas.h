@@ -66,6 +66,43 @@ CBLAS_INDEX cblas_isamax(const int N, const float  *X, const int incX);
 CBLAS_INDEX cblas_idamax(const int N, const double *X, const int incX);
 CBLAS_INDEX cblas_icamax(const int N, const void   *X, const int incX);
 CBLAS_INDEX cblas_izamax(const int N, const void   *X, const int incX);
+
+/*
+ * ===========================================================================
+ * Prototypes for level 1 BLAS routines
+ * ===========================================================================
+ */
+
+/* 
+ * Routines with standard 4 prefixes (s, d, c, z)
+ */
+void cblas_sswap(const int N, float *X, const int incX, 
+                 float *Y, const int incY);
+void cblas_scopy(const int N, const float *X, const int incX, 
+                 float *Y, const int incY);
+void cblas_saxpy(const int N, const float alpha, const float *X,
+                 const int incX, float *Y, const int incY);
+
+void cblas_dswap(const int N, double *X, const int incX, 
+                 double *Y, const int incY);
+void cblas_dcopy(const int N, const double *X, const int incX, 
+                 double *Y, const int incY);
+void cblas_daxpy(const int N, const double alpha, const double *X,
+                 const int incX, double *Y, const int incY);
+
+void cblas_cswap(const int N, void *X, const int incX, 
+                 void *Y, const int incY);
+void cblas_ccopy(const int N, const void *X, const int incX, 
+                 void *Y, const int incY);
+void cblas_caxpy(const int N, const void *alpha, const void *X,
+                 const int incX, void *Y, const int incY);
+
+void cblas_zswap(const int N, void *X, const int incX, 
+                 void *Y, const int incY);
+void cblas_zcopy(const int N, const void *X, const int incX, 
+                 void *Y, const int incY);
+void cblas_zaxpy(const int N, const void *alpha, const void *X,
+                 const int incX, void *Y, const int incY);
 #ifdef __cplusplus
 }
 #endif

@@ -61,10 +61,55 @@ void test_max() {
     printf("cblas_izamax: %I64d\n", cblas_izamax(2, X2, 1));
 }
 
+void test_p() {
+    float X1[] = {1};
+    float Y1[] = {2};
+
+    cblas_sswap(1, X1, 1, Y1, 1);
+    printf("cblas_sswap: %f %f\n", X1[0], Y1[0]);
+    cblas_scopy(1, X1, 1, Y1, 1);
+    printf("cblas_scopy: %f\n", Y1[0]);
+    cblas_saxpy(1, 2, X1, 1, Y1, 1);
+    printf("cblas_saxpy: %f\n", Y1[0]);
+    
+    double X2[] = {1};
+    double Y2[] = {2};
+    
+    cblas_dswap(1, X2, 1, Y2, 1);
+    printf("cblas_dswap: %lf %lf\n", X2[0], Y2[0]);
+    cblas_dcopy(1, X2, 1, Y2, 1);
+    printf("cblas_dcopy: %lf\n", Y2[0]);
+    cblas_daxpy(1, 2, X2, 1, Y2, 1);
+    printf("cblas_daxpy: %lf\n", Y2[0]);
+    
+    float X3[] = {1, 1};
+    float Y3[] = {2, 2};
+    float alpha1[] = {1, 2};
+
+    cblas_cswap(1, X3, 1, Y3, 1);
+    printf("cblas_cswap: %f %f %f %f\n", X3[0], X3[1], Y3[0], Y3[1]);
+    cblas_ccopy(1, X3, 1, Y3, 1);
+    printf("cblas_ccopy: %f %f\n", Y3[0], Y3[1]);
+    cblas_caxpy(1, alpha1, X3, 1, Y3, 1);
+    printf("cblas_caxpy: %f %f\n", Y3[0], Y3[1]);
+    
+    double X4[] = {1, 1};
+    double Y4[] = {2, 2};
+    double alpha2[] = {1, 2};
+
+    cblas_zswap(1, X4, 1, Y4, 1);
+    printf("cblas_zswap: %lf %lf %lf %lf\n", X4[0], X4[1], Y4[0], Y4[1]);
+    cblas_zcopy(1, X4, 1, Y4, 1);
+    printf("cblas_zcopy: %lf %lf\n", Y4[0], Y4[1]);
+    cblas_zaxpy(1, alpha2, X4, 1, Y4, 1);
+    printf("cblas_zaxpy: %lf %lf\n", Y4[0], Y4[1]);
+}
+
 int main() {
     test_dot();
     test_dot_sub();
     test_num();
     test_max();
+    test_p();
     return 0;
 }
