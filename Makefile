@@ -11,9 +11,12 @@ HEADER = cblas/include/cblas.h
 INCLUDE = -Icblas/include/
 OBJ = dot.o dot_sub.o nm.o max.o p.o
 OBJS = $(addprefix objs/, $(OBJ))
-VPATH = src
 
 all: dir $(ALIB) $(SLIB)
+
+dir:
+	mkdir -p objs cblas/include cblas/libs 
+	cp include/cblas.h cblas/include/cblas.h
 
 $(ALIB): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
@@ -21,12 +24,8 @@ $(ALIB): $(OBJS)
 $(SLIB): $(OBJS)
 	$(CC) $(CFLAGS) -shared -o $@ $^ $(LDFLAGS)
 
-objs/%.o: %.c include/cblas.h
+$(OBJS): objs/%.o: src/%.c include/cblas.h
 	$(CC) $(COMMON) $(CFLAGS) -o $@ -c $<
-
-dir:
-	mkdir -p objs cblas/include cblas/libs 
-	cp include/cblas.h cblas/include/cblas.h
 
 .PHONY: main clean
 
