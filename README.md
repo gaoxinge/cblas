@@ -6,5 +6,3 @@ C implementation of basic linear algebra subprograms.
 
 - [blas](http://www.netlib.org/blas/)
 - [atlas](https://www.netlib.org/atlas/)
-
-## numpy
